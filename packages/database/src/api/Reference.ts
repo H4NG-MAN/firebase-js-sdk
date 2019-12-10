@@ -44,8 +44,8 @@ export interface ReferenceConstructor {
 }
 
 export class Reference extends Query implements types.Reference {
-  public then: (a?: any) => Promise<any>;
-  public catch: (a?: Error) => Promise<any>;
+  then: (a?: any) => Promise<any>;
+  catch: (a?: Error) => Promise<any>;
 
   /**
    * Call options:
@@ -145,7 +145,7 @@ export class Reference extends Query implements types.Reference {
    * @return {!Promise}
    */
   update(
-    objectToMerge: Object,
+    objectToMerge: object,
     onComplete?: (a: Error | null) => void
   ): Promise<any> {
     validateArgCount('Reference.update', 1, 2, arguments.length);
